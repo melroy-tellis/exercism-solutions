@@ -1,0 +1,16 @@
+package binarysearch
+
+func SearchInts(list []int, key int) int {
+	lo, hi := 0, len(list) - 1
+    for lo <= hi {
+        mid := lo + (hi - lo)/2
+        if list[mid] < key {
+            lo = mid + 1
+        } else if list[mid] > key {
+            hi = mid - 1
+        } else {
+        	return mid    
+        }
+    }
+    return -1
+}
